@@ -12,7 +12,7 @@ function App() {
           <Routes>
             <Route path='/' element={<MostrarUsuarios/>}/>
             <Route path='/create' element={<CrearUsuarios/>}/>
-            {/* <Route path='/edit/:id' element={<EditarUsuarios/>}/>   */}
+           {/*  <Route path='/edit/:id' element={<EditarUsuarios/>}/> */}
             
           </Routes>
         </BrowserRouter>

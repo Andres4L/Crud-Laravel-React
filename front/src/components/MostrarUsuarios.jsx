@@ -20,14 +20,11 @@ const MostrarUsuarios = () => {
     }
     const deleteUsuarios = async (id) => {
         await axios.delete(`${endpoint}/usuario/${id}`)
+        getAllUsuarios()
     }
 
     return (
         <div>
-            <div className='d-grid gap-2'>
-                <Link to="/create" className='btn btn-primary btn-lg mt-2 mb--2 text-white'>Crear</Link>
-            </div>
-
             <table className='table table-striped'>
                 <thead className='bg-secondary text-white'>
                     <tr>
@@ -44,13 +41,16 @@ const MostrarUsuarios = () => {
                             <td>{usuario.email}</td>
                             <td>{usuario.telefono}</td>
                             <td>
-                                <Link to={`/edit/${usuario.id}`} className='btn btn-info'>Editar</Link>
+                               {/*  <Link to={`/edit/${usuario.id}`} className='btn btn-info'>Editar</Link> */}
                                 <button onClick={() => deleteUsuarios(usuario.id)} className='btn btn-danger'>Eliminar</button>
                             </td>
                         </tr>
                     ))}
                 </tbody>
             </table>
+            <div className='gap-2'>
+                <Link to="/create" className='btn btn-primary text-white'>Crear</Link>
+            </div>
         </div>
 
     )
