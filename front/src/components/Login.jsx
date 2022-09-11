@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
-import { useHistory, useNavigate, useParams } from 'react-router-dom'
+import { useHistory, useNavigate } from 'react-router-dom'
 
 
 const Login = () => {
@@ -39,8 +39,8 @@ const Login = () => {
     return (
         <div>
             <h1>LOGIN</h1>
-            <form onSubmit={auth}>
-                <div className='mb-3'>
+            <form onSubmit={auth} className='row justify-content-center'>
+                <div className='col-5'>
                     <label className='from-label'>Email</label>
                     <input
                         value={email}
@@ -49,7 +49,7 @@ const Login = () => {
                         className='form-control'
                     />
                 </div>
-                <div className='mb-3'>
+                <div className='col-5'>
                     <label className='from-label'>Password</label>
                     <input
                         value={password}
@@ -59,7 +59,7 @@ const Login = () => {
                     />
                 </div>
 
-                <button type='submit' className='btn btn-primary'>Ingresar</button>
+                <button type='submit' className='btn btn-primary col-5 mt-3'>Ingresar</button>
 
             </form>
 

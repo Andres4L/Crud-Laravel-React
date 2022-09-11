@@ -7,16 +7,18 @@ use Illuminate\Support\Facades\Route;
 
 
 
-Route::controller(UsuariosController::class)->group ( function () {
+/* Route::controller(UsuariosController::class)->group ( function () {
         Route::get('/usuarios','index');
         Route::post('/usuario','store');
         Route::get('/usuario/{id}','show');
         Route::put('/usuario/{id}','update');
         Route::delete('/usuario/{id}','destroy');        
-});
+}); */
 
 Route::post('register',[UserController::class,'register']);
 Route::post('login',[UserController::class,'login']);
+Route::get('/usuarios',[UserController::class,'index']);
+Route::delete('/usuario/{id}',[UserController::class,'destroy']);
 
 Route::group(['middleware'=>["auth:sanctum"]],function(){
 
